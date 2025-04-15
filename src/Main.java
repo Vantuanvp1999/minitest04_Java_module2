@@ -24,11 +24,16 @@ public class Main {
         fulltimes[0]= (NhanVienFulltime) nhanvien[0];
         fulltimes[1]= (NhanVienFulltime) nhanvien[1];
         fulltimes[2]= (NhanVienFulltime) nhanvien[2];
+
+        sortFultime(fulltimes);
+
+    }
+
+    private static void sortFultime(NhanVienFulltime[] fulltimes) {
         Arrays.sort(fulltimes,Comparator.comparing(NhanVienFulltime::getIncome));
         for (int i = 0; i < fulltimes.length; i++) {
             System.out.println(fulltimes[i]);
         }
-
     }
 
     private static void getSumIncomeParttime(NhanVien[] nhanvien) {

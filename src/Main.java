@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Comparator;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -17,6 +20,14 @@ public class Main {
 
         getSumIncomeParttime(nhanvien);
 
+        NhanVienFulltime[] fulltimes = new NhanVienFulltime[3];
+        fulltimes[0]= (NhanVienFulltime) nhanvien[0];
+        fulltimes[1]= (NhanVienFulltime) nhanvien[1];
+        fulltimes[2]= (NhanVienFulltime) nhanvien[2];
+        Arrays.sort(fulltimes,Comparator.comparing(NhanVienFulltime::getIncome));
+        for (int i = 0; i < fulltimes.length; i++) {
+            System.out.println(fulltimes[i]);
+        }
 
     }
 
